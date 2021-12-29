@@ -1,0 +1,29 @@
+---
+- name: Install the latest version of mariadb
+  yum:
+    name: mariadb
+    state: latest
+	
+- name: Enable service mariadb
+  systemd:
+    name: mariadb 
+    enabled: yes
+	 
+- name: restart mariadb service
+  systemd:
+    name: mariadb
+    state: started
+
+- name: Create database user with name 'bob' and password '12345' with all database privileges
+  mysql_user:
+    name: 'admin'
+    password: 'admin123'
+    priv: '*.*:ALL'
+    state: present
+    host: %
+
+- name: Create a new database with name 'bobdata'
+  mysql_db:
+    name: devopsdb
+    state: present
+
