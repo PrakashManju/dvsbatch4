@@ -1,0 +1,10 @@
+yum install mariadb-server
+systemctl enable mariadb.service
+systemctl restart mariadb.service
+
+
+CREATE USER 'admin'@'%' IDENTIFIED BY 'admin123';
+GRANT ALL PRIVILEGES ON * . * TO 'admin'@'%';
+FLUSH PRIVILEGES;
+create database devopsdb;
+
