@@ -1,0 +1,4 @@
+
+sudo yum install pip -y
+
+pip install awscli boto3 -U --ignore-installed
