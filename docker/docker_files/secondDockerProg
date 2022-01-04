@@ -1,0 +1,4 @@
+FROM centos:7
+ENV JAVA_PATH="/usr/bin/java"  myvar=1000
+RUN useradd ramesh && \
+    yum install telnet -y
